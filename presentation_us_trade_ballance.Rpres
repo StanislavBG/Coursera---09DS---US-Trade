@@ -1,0 +1,34 @@
+Explore US - Trade Ballance
+========================================================
+author: Stanislav Georgiev
+date: Jul-25-2015
+
+Who does US trades with? How much?
+========================================================
+
+The goal of this application is to provide interactive tool to settling down important convesations around who does the US trades with!
+
+- Our neightbours - Mexico & Canada are top
+
+
+Lets review a sample of the data to be more familiar
+========================================================
+
+```{r echo=FALSE}
+library(ggplot2)
+country_data <- read.csv("country2.csv", header = TRUE, stringsAsFactors = FALSE)
+print(country_data[1:15, ])
+```
+
+
+
+Sample plot (try the App for more!)
+========================================================
+
+```{r echo=FALSE}
+p <- ggplot(data = country_data, aes(x = Year, y = Import))
+p <- p + geom_bar(stat="identity")
+print(p)
+
+```
+
